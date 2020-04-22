@@ -1,0 +1,22 @@
+1) Plik zad1.cpp zawiera w sobie algorytm sortujący użyty również w zadaniu z profilera. Algorytm posiada błąd. Zadanie to zostało wymyślone w momencie w którym podczas robienia ćwiczenia z profilera do kodu wkradł mi się błąd i odruchowo sięgnąłem po reverse debugging, aby przyspieszyć eliminowanie problemu. Można więc potraktowac to zadanie jako życiowy przykład, których na przedmiocie Metody Numeryczne napotkaliście zapewne wiele.
+
+	a) Zadanie polega na znalezieniu błędu w kodzie zad1.cpp. Kod jako input bierze długość tablicy. Tablica ta wypełniana jest dla przejrzystości samymi piątkami. Wyświetla posortowaną tablicę oraz losową liczbę potrzebną do kolejnego podpunktu. Niestety w posortowanej tablicy wkrada się wartość 0. Należy używając jedynie pojedynczej komendy run znaleźć błąd w programie, a następnie go poprawić. (Jeśli komuś się nie uda to nie szkodzi. Proszę jednak, żebyście się postarali ponieważ całe ćwiczenie opiera się na poruszaniu się w kodzie w obie strony. No i tak będzie szybciej.)
+	Sugerowana strategia
+		-> Pobieżnie przejrzeć kod, aby zorientować się co po kolei jest wywoływane. Nie trzeba dokładnie analizować algorytmu.
+		-> Skompilować zadanie z odpowiednimi flagami.
+		-> Uruchomić program wykonywalny, aby zobaczyć problem.
+		-> Uruchomić dockera(jeśli nie wiesz jak to odsyłam do pliku InstrukcjeOgolne.txt w katalogu głównym), a następnie użyć rr do nagrania wykonania programu.
+		-> Odtworzyć nagranie w powłoce gdb.
+			-> Utworzyć breakpoint na koniec maina.
+			-> Użyć komendy continue, aby przenieść się na koniec wykonania.
+			-> Dodać watchpointa na tablicę, a następnie użyć komendy reverse-continue, aby przenieść się do odpowiedniego punktu.
+			-> Wyświetlić interesujące nas zmienne.
+			-> Za pomocą watchpointów oraz innych narzędzi dostępnych w gdb oraz narzędzi należących do reverse debuggingu, a w szczególności reverse-next namierzyć źródło problemu
+		-> Wyjść z dockera
+		-> Poprawić problem
+		-> Sprawdzić skuteczność rozwiązania
+
+	b) Zadanie polega na kilkukrotnym uruchomieniu programu normalnie, nagraniu odtworzenia programu w rr, a następnie kilkukrotnym uruchomieniu nagranego trace'a za pomocą rr.
+		-> Czy liczba losowa się zmienia?
+		-> Dlaczego tak się dzieje?
+		-> Jakie ma to dla nas skutki pozytywne oraz negatywne?

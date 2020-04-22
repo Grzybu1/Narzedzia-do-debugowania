@@ -1,0 +1,16 @@
+Narzędzie rr jest nakładką na znane nam już gdb. Służy ona do wsparcia metody debugowania jaką jest reverse debugging. Reverse debugging polega na nagraniu uruchomienia programu, aby następnie można było je odtworzyć wraz z całym przebiegiem w formie znanej z debugerów. Daje nam to możliwość poruszania się w programie zarówno w przód jak i w tył. 
+
+Podczas debugowania dostępne jest większość narzedzi dostępnych normalnie w powłoce gdb. Nowymi komendami są te rozpoczynające się od słowa reverse. Działają one podobnie jak ich odpowiedniki bez przedrostka, np.: 
+	-> reverse-next wykonuje poprzednią instrukcję (step-over), 
+	-> reverse-nexti wchodzi w poprzednią instrukcję (step-in), 
+	-> reverse-continue wykonuje program wstecz, aż do napotkania breakpointa.
+
+Aby nagrać przebieg wykonania należy wykonać komendę: sudo rr record -n wykonywalny.out
+Aby odtworzyć ostatnie nagranie wystarczy wykonać komendę: sudo rr replay
+
+Więcej na temat rr, reverse debuggingu oraz przykłady użycia można znaleźć w moim seminarium: https://www.youtube.com/watch?v=6dknSoLLozA&feature=youtu.be
+
+Istotne dla działania na dockerach jest odpowiednie uruchomienie dockera, które jednak naraża nas na pewne zagrożenia związane z bezpieczeństwem. Więcej na ten temat można znaleźć tutaj: https://github.com/mozilla/rr/wiki/Docker
+Ponadto zauważyłem, że do uruchomienia na dockerze poza ww flagami należy dodać --privileged.
+
+Instalacja narzędzia oraz kilka tutoriali dla chętnych: https://rr-project.org/

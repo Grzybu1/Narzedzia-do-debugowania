@@ -1,0 +1,26 @@
+Witam na moich zdalnie prowadzonych zajęciach laboratoryjnych. Nazywam się Wojciech Korzybski, a to jest plik z najważniejszymi informacjami dotyczącymi zajęć z Narzędzi do debugowania wraz z "instrukcją obsługi".
+
+1) Zadania
+	-> Są dwa zadania, których czas wykonania powinien wynieść w przybliżeniu czas trwania mojej części laboratorium dla osoby robiącej je pierwszy raz (jak załapiecie o co chodzi to gwarantuję, że wszystko co dzisiaj zrobicie będzie Wam szło błyskawicznie - nic tylko używać w praktyce!)
+	-> Każde zadanie składa się z 2 podpunktów. Pierwszy zawsze jest "treściwy" i jego wykonanie zajmie dłuższą chwilę niż wykonanie drugiego. Drugi natomiast jest w obu wypadkach punktem na który poświęcicie tyle czasu i uwagi ile sami uważacie za słuszne. Są to punkty pokazujące dodatkowe aspekty narzędzi, których nie ująłem w pierwszym punkcie, a które są swego rodzaju ciekawostką, która implikuje dalsze skutki, o których warto wiedzieć.
+	-> Kolejność zadań jest dowolna, chociaż sugeruję najpierw zadanie 1 z profilera.
+	-> Ze względu na feedback(pokrywający się zarówno z oceny planu, jak i oceny seminarium), zadanie z sytemu Windows zostało usunięte.
+	-> Zadania poza częścią z ustaloną odpowiedzią zawierają również szereg pytań pomocniczych, które omawiać będziemy na spotkaniu online, a które są sugestią odnośnie wniosków z ćwiczeń. Wszelkie inne wnioski są mile widziane.
+	-> Polecenia do zadań znajdują się w katalogach z zadaniami w pliku Polecenie.txt
+	-> W katalogach znajdują się również pliki Informacje.txt. Zawierają one niezbędne minimum potrzebne do wykonania zadań oraz linki do materiałów poszerzających wiedzę. 
+
+2) Seminarium
+	-> Pomimo obecności plików Informacje.txt zalecam obejrzeć przynajmniej pierwszą połowę mojego seminarium lub zajrzeć do źródeł podanych w seminarium oraz plikach. 
+	-> Link do seminarium znajdziecie w katalogu seminarium w pliku seminarium.txt. 
+	-> W tym katalogu znajdują się również przykłady omawiane przeze mnie w filmiku.
+
+3) Docker
+	-> W katalogu głównym znajduje się plik Dockerfile służący do zbudowania w razie potrzeby dockera.
+	-> Docker nie jest wymagany do zrobienia ćwiczeń - jest on jedynie ułatwieniem, aby nie było konieczne instalowanie rr.
+	-> Docker celowo nie instaluje edytorów tekstowych - każdy pliki powinien edytować poza dockerem we własnym środowisku wedle gustu.
+	-> Podczas instalacji docker kopiuje wszystkie pliki i katalogi do środka - po edycji plików należy zainstalować ponownie dockera, a dopiero później go uruchomić. Dzięki temu nasze pliki znajdą się w dockerze w celach debugowania ich rr oraz gprofem.
+	-> W dockerze znajduje się również kompilator.
+	-> Skrypt install_and_run.sh Instaluje docker oraz uruchamia go z odpowiednimi flagami KONIECZNYMI do prawidłowego działania rr
+	-> Gdyby ktoś miał ochotę na pracę poza dockerem to instrukcja instalacji rr znajduje się w pliku Informacje w katalogu zad2. Gprof instaluje się apt-getem jako część binutils.
+
+Życzę wszystkim powodzenia oraz miłej zabawy. W razie pytań, uwag lub wątpliwości służę pomocą.

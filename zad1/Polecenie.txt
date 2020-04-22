@@ -1,0 +1,14 @@
+1) Wszystkie pliki wykonywalne zawierają różne algorytmy sortujące. Pliki sort1.out, sort2.out, sort3.out należy wykonać najpierw. Każdy z plików zawiera przypadek optymistyczny oraz losowy w osobnych funkcjach. Dwa ponadto zawierają przypadek pesymistyczny.
+Programy zapytają o rozmiar tablicy. Służy to do dostosowania czasu wykonania do posiadanego sprzętu. Zalecam wykonywanie algorytmów dla tablic o długości około 20000 przy wolniejszych algorytmach oraz kilkaset tysięcy dla szybszych.
+Pliki zostały skompilowane w następujący sposób: g++ -pg -g -O0 plik.cpp
+Pliki ze względu na flagę -pg wygenerują plik gmon.out. 
+	
+	a)Należy skorzystać z programu gprof, aby ustalić, który z algorytmów to bubbleSort, HeapSort, insertionSort.
+		-> Czy jest to wykonalne korzystając jedynie z flat profile (opcja -p)
+		-> Czy jest to wykonalne korzystając z grafu wywołań (opcja -q)
+		-> Czy da się zrobić to obserwując czasy wykonania?
+		-> Czy możemy wywnioskować to na podstawie wywołań innych niż same funkcje sort_...? W jaki sposób?
+
+	b)Należy skorzystać z programu gprof, aby znaleźć nazwę niewywoływanej funkcji w pliku sort2.out
+
+2) Plik sort2_optimized.out został skompilowany inaczej niż poprzednie. Flaga -O0 została zastąpiona flagą -O2. Należy sprawdzić jak zmienił się wynik. Nie znajduje się tu zbyt wiele ciekawych rzeczy, punkt jest raczej dla własnej świadomości. Polecam wyświetlić również nieużywane funkcje.

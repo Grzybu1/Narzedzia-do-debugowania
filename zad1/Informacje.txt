@@ -1,0 +1,29 @@
+Narzędzie gprof należące do zestawu binutils służy do profilowania. Narzędzie jest dość proste w użytkowaniu, a do tego dość przydatne przy wszelkiego rodzaju optymalizacji. Sposób używania:
+1) Plik z kodem należy skompilować z flagą -pg.
+2) Następnie wykonać utworzony plik wykonywalny.
+3) Utworzony zostanie plik gmon.out
+4) Należy odczytać wynik profilowania. Są na to 2 podstawowe sposoby:
+	a) Wyświetlenie w command linie za pomocą komendy: gprof wykonywalny.out -flagi
+	b) Zapisanie wyniku do pliku komendą: gprof wykonywalny.out gmon.out >> plik.txt
+
+Sposób odczytu:
+Najbardziej przydatne sposoby na odczytanie to flat profile oraz graf wywołań.
+Jeśli nie dołączymy żadnej flagi do odczytu otrzymamy oba jednocześnie.
+1) Wykres flat profile składa się z 7 kolumn opisujących osobno wszystkie funkcje:
+	a) time - podaje w % ile czasu w programie spędziliśmy w danej funkcji
+	b) cumulative seconds - czas w sekundach jaki spędziliśmy w danej funkcji ORAZ w funkcjach powyżej niej
+	c) self seconds - czas w sekundach jaki spędziliśmy w danej funkcji
+	d) calls - ile razy funkcja została wywołana
+	e) name - nazwa funkcji wraz z typem argumentów
+	f) 2 kolumny ze średnim czasem w milisekundach na jedno wywołanie dla funkcji lub dla funkcji oraz jej poprzedników
+
+2) Wykres grafu posiada 6 kolumn oraz podzielony jest na sekcje. Opisuje on poza czasem spędzonym w funkcji również czas spędzony w funkcjach przez nią wywołanych. Kolumny należy rozumieć w następujący sposób:
+	a) index - indeks konkretnej funkcji
+	b) time - czas w procentach jaki spędziliśmy w danej funkcji podczas wykonania programu
+	c) self - dla rodzica jest to czas spędzony w tej funkcji w sekundach, dla potomka czas, który został "przekazany" rodzicowi
+	d) called - dla rodzica jest to ilość wywołań zewnętrznych oraz rekursywnych podanych po znaku +. Dla potomka jest to ilość wywołań przez danego rodzica oraz ilość wywołań w programie po znaku /.
+	e) name - nazwy funkcji. Funkcja aktualnie analizowana jest wysunięta najbardziej w lewo. Funkcje nad nią są funkcjami, które je wywołały, natomiast te poniżej to funkcje przez nią wywołane.
+
+Więcej informacji o samym działaniu narzędzia oraz przykłady użycia w moim seminarium: https://www.youtube.com/watch?v=6dknSoLLozA&feature=youtu.be
+Strona z dokumentacją zawierającą szczegółowe informacje oraz flagi potrzebne do wykonania zadań znajdują się pod linkiem:
+https://linux.die.net/man/1/gprof  
